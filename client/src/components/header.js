@@ -1,6 +1,26 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+
+
 export default class Header extends React.Component {
+  constructor(props){
+    super(props)
+    this.state = {
+      token: null
+    }
+    this.handleSignOut = this.handleSignOut.bind(this)
+  }
+
+  async componentWillMount(){
+    const token = await window.localStorage.getItem('token')
+    this.setState({ token })
+  }
+  
+  async handleSignOut(e){
+    e.preventDefault()
+    await window.localStorage.clear()
+  }
+
   render(){
     return (
       <div classNameName="App">
@@ -16,11 +36,28 @@ export default class Header extends React.Component {
             <ul className="navbar-nav mr-auto">
             </ul>
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item">
-              <Link to='/signin' className="nav-link btn-primary text-white">
-                <i className="fa fa-sign-in" aria-hidden="true"></i> Sign In
-              </Link>
-              </li>
+              {
+                this.state.token ? (
+                  <div>
+                    <li className="nav-item">
+                        <Link to='/dashboard' className="nav-link btn-primary text-white">
+                          <i className="fa fa-sign-in" aria-hidden="true"></i> Dashboard
+                        </Link>
+                    </li>
+                    <li className="nav-item">
+                      <button  to='/' className="nav-link btn-primary text-white">
+                        <i className="fa fa-sign-in" aria-hidden="true"></i> Sign Out
+                      </button>
+                    </li>
+                    </div>
+                ) : (
+                  <li className="nav-item">
+                    <Link to='/signin' className="nav-link btn-primary text-white">
+                      <i className="fa fa-sign-in" aria-hidden="true"></i> Sign In
+                    </Link>
+                  </li>
+                )
+              }
             </ul>
           </div>
         </nav>
