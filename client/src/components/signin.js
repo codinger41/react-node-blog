@@ -1,4 +1,5 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 export default class Signin extends React.Component {
   render(){
@@ -11,21 +12,17 @@ export default class Signin extends React.Component {
                       <h3 class="text-white">Sign In</h3>
                       <h6 class="font-weight-light text-white">Enter your login details</h6>
                       <form>
-                          <div class="form-group">
-                              <input type="text" class="form-control form-control-sm" placeholder="Username"/>
-                          </div>
-
-                          <div class="form-group">
-                              <input type="password" class="form-control form-control-sm" placeholder="Password"/>
-                          </div>
-
-                          <button class="btn btn-warning btn-block">
-                              <i class="fa fa-sign-in" aria-hidden="true"></i> Sign In</button>
+                        <div class="form-group">
+                          <input type="text" class="form-control form-control-sm" placeholder="Username"/>
+                        </div>
+                        <div class="form-group">
+                          <input type="password" class="form-control form-control-sm" placeholder="Password"/>
+                        </div>
+                        <Link to='/dashboard' class="btn btn-warning btn-block">
+                          <i class="fa fa-sign-in" aria-hidden="true"></i> Sign In
+                        </Link>
                       </form>
                       <hr/>
-                      <h6 class="text-white">Forgotten your password?
-                          <a class="text-white" href="#">Recover it</a>
-                        </h6>
                     </div>
                 </div>
             </div>

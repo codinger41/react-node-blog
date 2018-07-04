@@ -1,6 +1,5 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
-import { CLIENT_RENEG_LIMIT } from 'tls';
 
 export default class Posts extends React.Component {
   render(){
