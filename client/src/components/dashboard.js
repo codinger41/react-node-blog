@@ -42,7 +42,7 @@ export default class Dashboard extends React.Component {
                               <hr/>
                           </a>
                           <div class="seeButton">
-                              <button onClick={} class="btn btn-outline-primary">
+                              <button class="btn btn-outline-primary">
                                   <i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit
                               </button>
                               <a data-toggle="modal" data-target="#exampleModal" class="btn btn-outline-danger">
