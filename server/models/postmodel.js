@@ -1,5 +1,6 @@
 import mongoose from 'mongoose'
-const schema = mongoose.Schema
+import mongodbErrorHandler from 'mongoose-mongodb-errors'
+const Schema = mongoose.Schema
 
 const post = new Schema({ 
   title: { type: String, required: true },
@@ -8,4 +9,6 @@ const post = new Schema({
   timestamps: true
 })
 
-export default mongoose.model('Post', post)
+post.plugin(mongodbErrorHandler)
+
+export default mongoose.model('Posts', post)

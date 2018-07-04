@@ -1,5 +1,6 @@
 import mongoose, { Schema } from 'mongoose'
-const schema = mongoose.Schema
+import mongodbErrorHandler from 'mongoose-mongodb-errors'
+const Schema = mongoose.Schema
 
 const user = new Schema({
   email: { type: String, required: true },
@@ -7,4 +8,6 @@ const user = new Schema({
   password: { type: String, required: true }
 })
 
-export default mongoose.model('User', user)
+user.plugin(mongodbErrorHandler)
+
+export default mongoose.model('Users', user)
