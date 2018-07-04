@@ -1,4 +1,6 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
+import { CLIENT_RENEG_LIMIT } from 'tls';
 
 export default class Posts extends React.Component {
   render(){
@@ -16,10 +18,10 @@ export default class Posts extends React.Component {
                   <img class="card-img-top img-zoom" src={require('../img/biz1.jpg')} class="img-fluid" alt=""/>
                 </div>
                 <div class="card-body">
-                  <a href="#">
+                  <Link to='/post' >
                     <h4 class="card-title">Ventures Park</h4>
                     <hr/>
-                  </a>
+                  </Link>
                   <p class="author">
                     <i class="fa fa-map-marker" aria-hidden="true"></i>
                     <span>Abuja, Nigeria</span>
@@ -30,7 +32,7 @@ export default class Posts extends React.Component {
                   </p>
                 </div>
                   <div class="seeButton">
-                    <a href="feeds.html" class="btn btn-outline-primary"> See More</a>
+                    <Link to='/post' class="btn btn-outline-primary"> See More</Link>
                   </div>
                 </div>
             </div>
