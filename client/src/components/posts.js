@@ -29,7 +29,7 @@ export default class Posts extends React.Component {
           <div class="row card-deck">
             
             {
-              this.state.posts && this.state.posts.map(post => (
+              this.state.posts ? this.state.posts.map(post => (
                 <div class="col-md-4">
                 <div class="card">
                 <div class="view overlay hm-white-slight">
@@ -46,7 +46,9 @@ export default class Posts extends React.Component {
                   </div>
                 </div>
                 </div>
-              ))
+              )) : (
+                <h2>Wheew, no blogpost</h2>
+              )
             }
             
           </div>

@@ -11,7 +11,7 @@ exports.signUp = async (req, res) => {
     })
   }
   req.body.password = bcrypt.hashSync(password.toLowerCase(), 10)
-  req.body.username = username.toLowerCase()
+  req.body.email = email.toLowerCase()
   const user = await Users.create(req.body)
   if(user){
     req.body.password = undefined

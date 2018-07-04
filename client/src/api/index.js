@@ -17,3 +17,18 @@ export async function getOnePost(postId){
     return err.message
   }
 }
+
+export async function signIn(userData){
+  try {
+    const { email, password } = userData
+    const response = await axios.post(`http://localhost:5000/auth/signin`, {
+      email, password
+    })
+    if(response.data.success){
+      await window.localStorage.setItem('token', response.data.token)
+      return response.data.success
+    }
+  } catch (err) {
+    return err.message
+  }
+}
