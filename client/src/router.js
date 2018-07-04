@@ -11,7 +11,7 @@ export const Router = () => (
       <Switch>
         <Route exact path="/" component={ Posts } />
         <Route path="/signin" exact component={ Signin } />
-        <Route path="/post" exact component={ Post } />
+        <Route path="/post/:postId" exact component={ Post } />
         <Route path="/dashboard" exact component= { Dashboard } />
         <Route path="/newpost" exact component={ NewPost } />
         <Route path="/dashboard" exact component={ Posts } />

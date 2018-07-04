@@ -1,6 +1,7 @@
 import express from 'express'
 import bodyParser from 'body-parser'
 import mongoose from 'mongoose'
+import cors from 'cors'
 import dotenv from 'dotenv'
 import appRouter from './routes/index'
 import { productionErrors, developmentErrors } from './handlers/errorhandler'
@@ -11,6 +12,7 @@ const app = express()
 app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json())
 
+app.use(cors())
 // use this express router for all routes
 app.use('/', appRouter)
 
