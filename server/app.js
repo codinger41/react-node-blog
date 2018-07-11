@@ -37,8 +37,6 @@ app.listen(port, () => {
   console.log(`server is running on ${port}`)
   mongoose.Promise = global.Promise
   mongoose.connect(process.env.MONGODB_URL, () => {
-    // changeStreamHelper.changeStream()
-    // cronJob.cronJob()
     console.log(`Database connection established successfully!`)
   })
 })
